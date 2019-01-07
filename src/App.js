@@ -1,28 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Context from "./contexts";
+import FormWizardContainer from "./containers/FormWizardContainer";
+import EmailContainer from "./containers/stepperContainers/EmailContainer";
+import LanguageContainer from "./containers/stepperContainers/LanguageContainer";
+import SongContainer from "./containers/stepperContainers/SongContainer";
+import { activeStepIndex } from "./reducers";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			activeStepIndex: 0,
+			_activeStepIndex: action =>
+				this.setState(state => activeStepIndex(state, action)),
+		};
+	}
+	render() {
+		return (
+			<Context.Provider value={this.state}>
+				<FormWizardContainer>
+					<EmailContainer />
+					<LanguageContainer />
+					<SongContainer />
+				</FormWizardContainer>
+			</Context.Provider>
+		);
+	}
 }
 
 export default App;
