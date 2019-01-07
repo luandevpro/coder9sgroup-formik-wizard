@@ -3,6 +3,6 @@ import Email from "../../components/stepper/Email";
 
 export default class EmailContainer extends Component {
 	render() {
-		return <Email />;
+		return <Email {...this.props} />;
 	}
 }

@@ -1,7 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
+import { FieldArray } from "formik";
+import CustomCheckbox from "../form/fields/CustomCheckbox";
 
-export default class Song extends Component {
-	render() {
-		return <div>song</div>;
-	}
-}
+export default props => (
+	<FieldArray name="categoryIds">
+		{arrayHelpers => (
+			<CustomCheckbox arrayHelpers={arrayHelpers} {...props} />
+		)}
+	</FieldArray>
+);

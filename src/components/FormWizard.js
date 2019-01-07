@@ -23,6 +23,13 @@ export default class FormWizard extends Component {
 			});
 		}
 	};
+	validate = values => {
+		const activePage = React.Children.toArray(
+			this.props.children.props.children
+		)[this.props.children.props.activeStepIndex];
+		// var x = activePage.props.validate(values);
+		return activePage.props.validate ? activePage.props.validate(values) : {};
+	};
 	render() {
 		var { email, categoryIds, languages } = this.state;
 		var { children } = this.props;
@@ -30,6 +37,7 @@ export default class FormWizard extends Component {
 			<Formik
 				initialValues={{ email, categoryIds, languages }}
 				onSubmit={this.handleSubmit}
+				validate={this.validate}
 			>
 				{children}
 			</Formik>
