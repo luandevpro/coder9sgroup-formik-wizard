@@ -5,12 +5,14 @@ import CheckBoxContainer from "./containers/CheckBoxContainer";
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {}
+		this.state = {};
 	}
 	render() {
-		return <Context.Provider value={this.state}>
-         <CheckBoxContainer />
-      </Context.Provider>;
+		return (
+			<Context.Provider value={this.state}>
+				<CheckBoxContainer />
+			</Context.Provider>
+		);
 	}
 }
 
