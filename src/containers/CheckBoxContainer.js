@@ -1,12 +1,15 @@
-import React, { Component } from 'react'
-import CheckBox from '../components/CheckBox';
+import React, { Component } from "react";
+import CheckBox from "../components/CheckBox";
+import Context from "../contexts";
 
 export default class CheckBoxContainer extends Component {
-  render() {
-    return (
-      <div>
-        <CheckBox />
-      </div>
-    )
-  }
+	static contextType = Context;
+	render() {
+		var value = this.context;
+		return (
+			<div>
+				<CheckBox _languages={value.languages} />
+			</div>
+		);
+	}
 }

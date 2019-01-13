@@ -1,12 +1,13 @@
-import React, { Component } from "react";
-import { Form, Field } from "formik";
+import React from "react";
+import { Form, FieldArray } from "formik";
+import CustomCheckBox from "./CustomCheckBox";
 
-export default class FormField extends Component {
-	render() {
-		return (
-			<Form>
-				<Field />
-			</Form>
-		);
-	}
-}
+export default props => (
+	<Form>
+		<FieldArray name="languages">
+			{arrayHelpers => (
+				<CustomCheckBox arrayHelpers={arrayHelpers} {...props} />
+			)}
+		</FieldArray>
+	</Form>
+);

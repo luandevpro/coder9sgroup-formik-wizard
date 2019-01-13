@@ -5,7 +5,9 @@ import CheckBoxContainer from "./containers/CheckBoxContainer";
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			languages: ["vi", "en", "cn", "jp", "us", "be"],
+		};
 	}
 	render() {
 		return (
