@@ -7,19 +7,20 @@ export default props => (
 			<div key={index}>
 				<input
 					name="languages"
-					type="checkbox"
+					type="radio"
 					id={_language}
 					value={_language}
 					checked={props.arrayHelpers.form.values.languages.includes(
 						_language
 					)}
 					onChange={e => {
-						if (e.target.checked) props.arrayHelpers.push(_language);
+						if (
+							e.target.checked &&
+							props.arrayHelpers.form.values.languages.length === 0
+						)
+							props.arrayHelpers.push(_language);
 						else {
-							const idx = props.arrayHelpers.form.values.languages.indexOf(
-								_language
-							);
-							props.arrayHelpers.remove(idx);
+							props.arrayHelpers.replace(0, _language);
 						}
 					}}
 				/>
@@ -28,7 +29,11 @@ export default props => (
 		))}
 		<ErrorMessage
 			name="languages"
-			render={msg => <div className="text-danger">{msg}</div>}
+			render={msg => (
+				<div style={{ color: "red" }} className="text-danger">
+					{msg}
+				</div>
+			)}
 		/>
 		<button type="submit">Submit</button>
 	</div>

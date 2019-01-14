@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, FieldArray } from "formik";
-import CustomCheckBox from "./CustomCheckBox";
+import CustomCheckBox from "./CustomRadio";
 
 export default props => (
 	<Form>

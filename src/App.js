@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Context from "./contexts";
-import CheckBoxContainer from "./containers/CheckBoxContainer";
+import RadioContainer from "./containers/RadioContainer";
 
 class App extends Component {
 	constructor(props) {
@@ -12,7 +12,7 @@ class App extends Component {
 	render() {
 		return (
 			<Context.Provider value={this.state}>
-				<CheckBoxContainer />
+				<RadioContainer />
 			</Context.Provider>
 		);
 	}

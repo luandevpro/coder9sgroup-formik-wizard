@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import FormField from "./FormField";
 import { validationSchema } from "./validation";
 
-export default class CheckBox extends Component {
+export default class Radio extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {

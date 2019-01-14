@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import CheckBox from "../components/CheckBox";
+import Radio from "../components/Radio";
 import Context from "../contexts";
 
-export default class CheckBoxContainer extends Component {
+export default class RadioContainer extends Component {
 	static contextType = Context;
 	render() {
 		var value = this.context;
 		return (
 			<div>
-				<CheckBox _languages={value.languages} />
+				<Radio _languages={value.languages} />
 			</div>
 		);
 	}
