@@ -7,22 +7,22 @@ export default class Radio extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			languages: [],
+			company: [],
 		};
 	}
 	handleSubmit = values => {
 		console.log(JSON.stringify(values, null, 2));
 	};
 	render() {
-		var { languages } = this.state;
-		var { _languages } = this.props;
+		var { company } = this.state;
+		var { _company } = this.props;
 		return (
 			<Formik
-				initialValues={{ languages }}
+				initialValues={{ company }}
 				validationSchema={validationSchema}
 				onSubmit={this.handleSubmit}
 			>
-				{props => <FormField {...props} _languages={_languages} />}
+				{props => <FormField {...props} _company={_company} />}
 			</Formik>
 		);
 	}

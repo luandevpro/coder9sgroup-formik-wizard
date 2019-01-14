@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import Radio from "../components/Radio";
+import Select from "../components/Select";
 import Context from "../contexts";
 
-export default class RadioContainer extends Component {
+export default class SelectContainer extends Component {
 	static contextType = Context;
 	render() {
 		var value = this.context;
 		return (
 			<div>
-				<Radio _languages={value.languages} />
+				<Select _company={value.company} />
 			</div>
 		);
 	}
