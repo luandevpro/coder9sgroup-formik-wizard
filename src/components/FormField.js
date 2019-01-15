@@ -1,16 +1,14 @@
 import React from "react";
-import { Form } from "formik";
-import CustomSelect from "./CustomSelect";
+import { Form, FieldArray } from "formik";
+import CustomUpload from "./CustomUpload";
 
 export default props => (
 	<Form>
-		<CustomSelect
-			name="company"
-			value={props.values.topics}
-			onChange={props.setFieldValue}
-			onBlur={props.setFieldTouched}
-			{...props}
-		/>
+		<FieldArray name="images">
+			{arrayHelpers => (
+				<CustomUpload arrayHelpers={arrayHelpers} {...props} />
+			)}
+		</FieldArray>
 		<button type="submit">Submit</button>
 	</Form>
 );
