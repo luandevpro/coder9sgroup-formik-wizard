@@ -1,24 +1,16 @@
 import React, { Component } from "react";
 import Context from "./contexts";
-import RadioContainer from "./containers/SelectContainer";
+import DateContainer from "./containers/DateContainer";
 
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			company: [
-				{ value: "Facebook", label: "Facebook" },
-				{ value: "Google", label: "Google" },
-				{ value: "Apple", label: "Apple" },
-				{ value: "Amazon", label: "Amazon" },
-				{ value: "Netlify", label: "Netlify" },
-			],
-		};
+		this.state = {};
 	}
 	render() {
 		return (
 			<Context.Provider value={this.state}>
-				<RadioContainer />
+				<DateContainer />
 			</Context.Provider>
 		);
 	}
