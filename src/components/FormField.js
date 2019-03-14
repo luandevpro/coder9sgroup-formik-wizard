@@ -1,10 +1,10 @@
 import React from "react";
 import { Form } from "formik";
-import CustomDate from "./CustomDate";
+import CustomDraft from "./CustomDraft";
 
 export default props => (
 	<Form>
-		<CustomDate name="date" {...props} />
+		<CustomDraft {...props} />
 		<button type="submit">Submit</button>
 	</Form>
 );

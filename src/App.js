@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Context from "./contexts";
-import DateContainer from "./containers/DateContainer";
+import DraftContainer from "./containers/DraftContainer";
 
 class App extends Component {
 	constructor(props) {
@@ -10,7 +10,7 @@ class App extends Component {
 	render() {
 		return (
 			<Context.Provider value={this.state}>
-				<DateContainer />
+				<DraftContainer />
 			</Context.Provider>
 		);
 	}
