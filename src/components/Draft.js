@@ -1,14 +1,24 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
 import FormField from "./FormField";
-import { EditorState, convertToRaw, convertFromRaw } from "draft-js";
+import {
+	EditorState,
+	convertToRaw,
+	convertFromHTML,
+	convertFromRaw,
+	ContentState,
+} from "draft-js";
 import draftToHtml from "draftjs-to-html";
 
 export default class Draft extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			editorState: new EditorState.createEmpty(),
+			editorState: EditorState.createWithContent(
+				ContentState.createFromBlockArray(
+					convertFromHTML("<h1>Hello coder9s</h1>")
+				)
+			),
 		};
 	}
 	handleSubmit = (values, { resetForm }) => {
